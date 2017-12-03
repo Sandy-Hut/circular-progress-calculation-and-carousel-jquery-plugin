@@ -3,7 +3,7 @@
     var maxVisibleCircle = 12;
     var maxVisibleLines = 11;    
     // function to create the lessons data
-    window.createCircleData = function(count) {
+    window.createCircleData = function(count) { // function is added to window object just to access it from the html file since it;s inside the function wrapper
         var ulWrapper = $('.progress');
         var data = '<li data-percent="0%">'+
         '<span class="right-tick-icon hidden"><img src="images/icon-right-tick.png"></span>'+
@@ -23,7 +23,7 @@
         '</li>'+
         '<div class="line"></div>';
     if(count < 4) {
-        alert('Lessons must be greater or equal to 4');
+        alert('Count must be greater or equal to 4');
         return;
     }
     for(var i=0; i<count; i++) {
@@ -58,14 +58,14 @@
         type: 'GET',
         dataType : 'json',
         complete: function(data) {
-            if(data.status == 200) {
+            if(data.status === 200) {
                 var dataVal = JSON.parse(data.responseText);
                 $.each(liData, function(index, value){
                     var _this = $(this);
                     _this.attr('data-percent', dataVal.response[index].percent);
                     //_this.find('.lesson').text('LESSON ' + (index+1));
                     _this.find('svg:nth-child(3) path').attr('stroke-dashoffset',(parseInt(dataVal.response[index].percent)*6.3).toString());
-                    if(_this.attr('data-percent') == '100%') {
+                    if(_this.attr('data-percent') === '100%') {
                         _this.next().css('border-color','rgba(0, 100, 80, 0.9)');
                         _this.find('svg:nth-child(3) path').css('fill','rgba(0, 100, 80, 0.9)');
                         _this.find('.right-tick-icon').fadeOut().delay(1500).fadeIn();
@@ -97,7 +97,7 @@
             $('.prev-white').removeClass('hidden').fadeIn();
             $('.prev-gray').addClass('hidden');
             currentIndex += 1;
-            if(currentIndex+maxVisibleCircle == liWrap.length) {
+            if(currentIndex+maxVisibleCircle === liWrap.length) {
             $('.next').css('pointer-events','none');
             $('.next-gray').removeClass('hidden').fadeIn();
             $(this).siblings('.mother-wrapper').find('ul').stop().animate({
@@ -113,7 +113,7 @@
             $('.next-white').removeClass('hidden').fadeIn();
             $('.next-gray').addClass('hidden'); 
             currentIndex -= 1;
-            if(currentIndex == 0) {
+            if(currentIndex === 0) {
             $('.previous').css('pointer-events','none');
             $('.prev-gray').removeClass('hidden').fadeIn();
             }
