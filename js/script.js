@@ -1,7 +1,7 @@
 (function(){
-    var currentIndex = 0;    
+    var currentIndex = 0;
     var maxVisibleCircle = 12;
-    var maxVisibleLines = 11;    
+    var maxVisibleLines = 11;
     // function to create the lessons data
     window.createCircleData = function(count) { // function is added to window object just to access it from the html file since it;s inside the function wrapper
         var ulWrapper = $('.progress');
@@ -38,7 +38,7 @@
     var lineMrRight = parseInt(lineData.css('margin-right'));
     $('.mother-wrapper').css({
         width: (liData.width()*maxVisibleCircle + lineData.width()*maxVisibleLines)- (-(lineMrLeft + lineMrRight)*maxVisibleCircle-(-(lineMrLeft + lineMrRight)))
-    });        
+    });
     if(count < 12) {
         lineData.css({
             width: ((ulWrapper.width())-(liData.width()*count))/(count-1)
@@ -50,7 +50,7 @@
         ulWrapper.css('width',theWidth);
     } else {
         $('.previous').css('pointer-events','none');
-        $('.prev-gray, .next-white').removeClass('hidden').fadeIn();        
+        $('.prev-gray, .next-white').removeClass('hidden').fadeIn();
         ulWrapper.css('width',theWidth);
     }
     $.ajax({
@@ -62,6 +62,7 @@
                 var dataVal = JSON.parse(data.responseText);
                 $.each(liData, function(index, value){
                     var _this = $(this);
+
                     _this.attr('data-percent', dataVal.response[index].percent);
                     //_this.find('.lesson').text('LESSON ' + (index+1));
                     _this.find('svg:nth-child(3) path').attr('stroke-dashoffset',(parseInt(dataVal.response[index].percent)*6.3).toString());
@@ -121,5 +122,5 @@
             "margin-left": -(slideWidth*currentIndex)
             }, 1000)       
         }
-    }) 
+    });
 })();    
