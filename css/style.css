@@ -1,0 +1,148 @@
+
+
+body {
+    background-color: #5fa55f;
+    text-align: center;
+}
+/* Load animation */
+
+@-webkit-keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+@-moz-keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+@keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+.hidden {
+    display: none;
+}
+/* Container */
+div#container{
+    clear:both;
+    overflow:hidden;
+    width:100%;
+    position:relative;
+    margin:40px auto;
+    display:block;
+}
+.progress {
+    padding: 0;
+    height: 150px;
+    text-align: left;
+    padding: 0;
+}
+.mother-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Item */
+
+.progress>li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #93A2AC;
+    font-family: Lato;
+    font-weight: 100;
+    margin-top: 2rem;
+}
+.progress>li:after {
+    content: attr(data-percent);
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+    left: 0;
+}
+
+.progress svg {
+    width: 5.5rem;
+    height: inherit;
+    /*height: 10rem;*/
+}
+
+.progress svg:nth-child(3) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+}
+
+.progress svg:nth-child(3) path {
+    fill: none;
+    stroke-width: 6;
+    stroke-dasharray: 629;
+    stroke: #fff;
+    -webkit-animation: load 2s;
+    -moz-animation: load 2s;
+    -o-animation: load 2s;
+    animation: load 2s;
+}
+.active svg:nth-child(3) path {
+    fill: #fff !important;
+    stroke-width: 20;
+}
+.active svg:nth-child(2) g {
+    stroke-width: 20;
+}
+.progress>li.active:after {
+    color: rgba(0, 100, 80, 0.9);
+}
+span.lesson {
+    color: #fff;
+    width: 90px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+}
+
+div.line {
+    display: inline-block;
+    border-top: 2px solid #fff;
+    position: relative;
+    min-width: 30px;
+    top: -43px;
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+.right-tick-icon {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    z-index: 2;
+}
+.arrow i {
+    font-size: 40px;
+    color: #fff;
+}
+.previous {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+    top: 40%;
+    cursor: pointer;
+    z-index: 20;
+}
