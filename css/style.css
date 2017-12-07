@@ -1,7 +1,7 @@
 
 
 body {
-    background-color: #5fa55f;
+    background-color: gray;
     text-align: center;
 }
 /* Load animation */
@@ -37,7 +37,6 @@ div#container{
     padding: 0;
     height: 150px;
     text-align: left;
-    padding: 0;
 }
 .mother-wrapper {
     position: relative;
