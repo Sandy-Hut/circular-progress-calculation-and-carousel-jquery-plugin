@@ -6,15 +6,15 @@
     window.createCircleData = function(count) { // function is added to window object just to access it from the html file since it;s inside the function wrapper
         var ulWrapper = $('.progress');
         var data = '<li data-percent="0%">'+
-        '<span class="right-tick-icon hidden"><img src="images/icon-right-tick.png"></span>'+
+        '<span class="right-tick-icon hidden"><img src="images/tick.png"></span>'+
         '<svg viewBox="-10 -10 220 220">'+
         '<g fill="none" stroke-width="6" transform="translate(100,100)">'+
-        '<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="rgba(0, 100, 80, 0.9)"/>'+
-        '<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="rgba(0, 100, 80, 0.9)"/>'+
-        '<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="rgba(0, 100, 80, 0.9)"/>'+
-        '<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="rgba(0, 100, 80, 0.9)"/>'+
-        '<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="rgba(0, 100, 80, 0.9)"/>'+
-        '<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="rgba(0, 100, 80, 0.9)"/>'+
+        '<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="#20B2AA"/>'+
+        '<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="#20B2AA"/>'+
+        '<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="#20B2AA"/>'+
+        '<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="#20B2AA"/>'+
+        '<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="#20B2AA"/>'+
+        '<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="#20B2AA"/>'+
         '</g>'+
         '</svg> <svg viewBox="-10 -10 220 220">'+
         '<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="0"></path>'+
@@ -67,8 +67,8 @@
                     //_this.find('.lesson').text('LESSON ' + (index+1));
                     _this.find('svg:nth-child(3) path').attr('stroke-dashoffset',(parseInt(dataVal.response[index].percent)*6.3).toString());
                     if(_this.attr('data-percent') === '100%') {
-                        _this.next().css('border-color','rgba(0, 100, 80, 0.9)');
-                        _this.find('svg:nth-child(3) path').css('fill','rgba(0, 100, 80, 0.9)');
+                        _this.next().css('border-color','#20B2AA');
+                        _this.find('svg:nth-child(3) path').css('fill','#20B2AA');
                         _this.find('.right-tick-icon').fadeOut().delay(1500).fadeIn();
                     }
                 });

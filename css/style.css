@@ -55,6 +55,10 @@ div#container{
     font-weight: 100;
     margin-top: 2rem;
 }
+.progress>li img {
+    width: 40px;
+    height: 40px;
+}
 .progress>li:after {
     content: attr(data-percent);
     position: absolute;
